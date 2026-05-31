@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Porteau Cove — A Field Guide to Howe Sound, Sea to Sky BC</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="canonical" href="https://porteau-cove.ca/">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A clear, honest field guide to Porteau Cove Provincial Park on Howe Sound — the closest serious saltwater paddling launch to Vancouver. Tides, winds, the sunken-ship reefs, camping, and the small details locals know.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #ffffff;
+    --paper-warm: #faf6ee;
+    --paper-deep: #f1ece0;
+    --paper-card: #ffffff;
+    --ink: #0f0e0c;
+    --ink-soft: #2d2922;
+    --ink-mute: #6a6258;
+    --rule: #e3ddd0;
+    --rule-strong: #cdc6b8;
+    --moss: #2b3a2b;
+    --rust: #8a4a2c;
+    --gold: #b5832e;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    background: var(--paper); color: var(--ink);
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+
+  a { color: inherit; text-decoration: none; }
+  .underline-link { border-bottom: 1px solid var(--rule); transition: border-color 0.2s; }
+  .underline-link:hover { border-bottom-color: var(--ink); }
+
+  h1, h2, h3, h4 {
+    font-family: "Fraunces", "Times New Roman", serif;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0;
+    font-variation-settings: "opsz" 144, "SOFT" 30;
+  }
+  h1 { font-size: clamp(2.5rem, 5.5vw, 4.25rem); font-weight: 400; letter-spacing: -0.025em; }
+  h2 { font-size: clamp(1.55rem, 2.8vw, 2.1rem); font-weight: 400; letter-spacing: -0.02em; }
+  h3 { font-size: 1.2rem; font-weight: 500; line-height: 1.3; letter-spacing: -0.01em; }
+  em { font-style: italic; }
+
+  p { margin: 0 0 1rem; color: var(--ink-soft); font-size: 1.04rem; line-height: 1.7; }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 2rem; }
+  .wrap-narrow { max-width: 760px; margin: 0 auto; padding: 0 2rem; }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  nav.top .inner {
+    max-width: 1180px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.9rem 2rem;
+  }
+  .mark {
+    font-family: "Fraunces", serif;
+    font-size: 1rem; font-weight: 500;
+    color: var(--ink);
+  }
+  .mark small {
+    display: block; font-family: "Inter", sans-serif; font-weight: 500;
+    font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); margin-top: 0.15rem;
+  }
+  nav.top .links { display: flex; gap: 1.5rem; }
+  nav.top .links a {
+    font-family: "Inter", sans-serif;
+    font-size: 0.76rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: var(--ink-soft);
+  }
+  nav.top .links a:hover { color: var(--ink); }
+  @media (max-width: 760px) { nav.top .links { display: none; } }
+
+  /* ---------- BREADCRUMB ---------- */
+  .breadcrumb {
+    padding: 1.5rem 0 0.75rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.78rem;
+    color: var(--ink-mute);
+    font-weight: 500;
+  }
+  .breadcrumb a { color: var(--ink-mute); }
+  .breadcrumb a:hover { color: var(--ink); }
+  .breadcrumb .sep { padding: 0 0.65rem; color: var(--ink-mute); opacity: 0.6; }
+  .breadcrumb .here { color: var(--ink); font-weight: 500; }
+
+  /* ---------- TITLE BLOCK ---------- */
+  .title-block { padding: 0.75rem 0 1.5rem; }
+  .title-block h1 { margin-bottom: 0.75rem; }
+  .meta-row {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 0.85rem;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+  .stars {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    color: var(--gold);
+    font-weight: 600;
+  }
+  .stars .star { font-size: 1rem; }
+  .stars .num { color: var(--ink); font-weight: 600; }
+  .stars .count { color: var(--ink-mute); font-weight: 400; }
+  .stars .count:hover { color: var(--ink); text-decoration: underline; }
+  .meta-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--ink-mute); opacity: 0.5; }
+  .meta-row .difficulty {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    font-weight: 500;
+  }
+  .meta-row .difficulty::before {
+    content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--moss);
+  }
+  .meta-row .park { color: var(--ink); }
+  .meta-row .park:hover { text-decoration: underline; }
+
+  /* ---------- TABS ---------- */
+  .tabs {
+    margin-top: 1.75rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex; gap: 2rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-wrap: nowrap;
+  }
+  .tabs::-webkit-scrollbar { display: none; }
+  @media (max-width: 680px) {
+    .tabs { gap: 1.5rem; }
+    .tabs a { font-size: 0.88rem; padding: 0.75rem 0 0.85rem; }
+  }
+  .tabs a {
+    padding: 0.85rem 0 0.95rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem; font-weight: 500;
+    color: var(--ink-mute);
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    white-space: nowrap;
+  }
+  .tabs a:hover { color: var(--ink); }
+  .tabs a.active { color: var(--ink); border-bottom-color: var(--ink); }
+
+  /* ---------- HERO LAYOUT ---------- */
+  .hero-layout {
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  @media (max-width: 860px) {
+    .hero-layout { grid-template-columns: 1fr; gap: 1.25rem; }
+  }
+  .hero-photo {
+    background-size: cover;
+    background-position: center;
+    background-color: var(--paper-deep);
+    border-radius: 6px;
+    aspect-ratio: 4 / 3;
+    min-height: 380px;
+    border: 1px solid var(--rule);
+  }
+  @media (max-width: 860px) {
+    .hero-photo { aspect-ratio: 16/10; min-height: 240px; }
+  }
+  .hero-details {
+    display: flex; flex-direction: column;
+    gap: 1rem;
+  }
+  .details-card {
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--paper-warm);
+    padding: 1.5rem;
+  }
+  .details-card h3 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    margin: 0 0 1.25rem;
+  }
+  .details-card .row {
+    display: grid; grid-template-columns: 28px 1fr auto;
+    gap: 0.85rem;
+    align-items: center;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--rule);
+  }
+  .details-card .row:first-of-type { border-top: none; padding-top: 0; }
+  .details-card .row:last-of-type { padding-bottom: 0; }
+  .details-card .row .ic { color: var(--moss); }
+  .details-card .row .ic svg { width: 24px; height: 24px; display: block; }
+  .details-card .row .k {
+    font-family: "Inter", sans-serif;
+    font-size: 0.92rem; color: var(--ink-mute); font-weight: 500;
+  }
+  .details-card .row .v {
+    font-family: "Fraunces", serif;
+    font-size: 1.15rem; font-weight: 500; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .details-card .row .v.small { font-size: 1rem; }
+
+  /* ---------- OVERVIEW DESCRIPTION ---------- */
+  section.overview { padding: 2.5rem 0 4rem; }
+  section.overview .grid {
+    display: grid; grid-template-columns: 1.65fr 1fr; gap: 4rem;
+  }
+  @media (max-width: 900px) { section.overview .grid { grid-template-columns: 1fr; gap: 2rem; } }
+  section.overview .lead {
+    font-family: "Fraunces", serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.005em;
+  }
+  section.overview p { font-size: 1.04rem; }
+
+  .sidecard {
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .sidecard h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--ink-mute); font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  .sidecard ul { list-style: none; padding: 0; margin: 0; }
+  .sidecard ul li {
+    display: flex; gap: 0.75rem; align-items: baseline;
+    padding: 0.55rem 0;
+    border-top: 1px solid var(--rule);
+    font-size: 0.95rem; color: var(--ink-soft);
+  }
+  .sidecard ul li:first-child { border-top: none; padding-top: 0; }
+  .sidecard ul li .k { color: var(--ink-mute); flex: 0 0 80px; font-size: 0.85rem; }
+  .sidecard ul li .v { color: var(--ink); font-weight: 500; }
+  .sidecard ul li .v em { font-family: "Fraunces", serif; font-weight: 400; }
+
+  /* ---------- WHAT TO EXPECT ---------- */
+  section.expect { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .section-eyebrow {
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink-mute);
+    display: block; margin-bottom: 0.9rem;
+  }
+  .section-head { margin-bottom: 2.25rem; max-width: 28ch; }
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem 2.5rem;
+  }
+  @media (max-width: 900px) { .expect-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .expect-grid { grid-template-columns: 1fr; } }
+  .expect-row {
+    display: grid; grid-template-columns: 40px 1fr;
+    gap: 1rem; align-items: start;
+  }
+  .expect-row .icon { color: var(--moss); padding-top: 2px; }
+  .expect-row .icon svg { width: 32px; height: 32px; display: block; }
+  .expect-row h3 { font-family: "Inter", sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--ink); margin-bottom: 0.25rem; }
+  .expect-row p { font-size: 0.92rem; margin: 0; color: var(--ink-soft); line-height: 1.55; }
+
+  /* ---------- RENTALS ---------- */
+  section.water { padding: 3.5rem 0; background: var(--paper-deep); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .water-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  @media (max-width: 900px) { .water-cards { grid-template-columns: 1fr; } }
+  .water-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+    display: flex; flex-direction: column;
+  }
+  .water-card .ic { color: var(--moss); margin-bottom: 0.6rem; }
+  .water-card .ic svg { width: 40px; height: 40px; display: block; }
+  .water-card h3 { margin-bottom: 0.45rem; font-family: "Fraunces", serif; font-weight: 500; font-size: 1.2rem; }
+  .water-card p { font-size: 0.95rem; color: var(--ink-soft); margin: 0 0 1rem; }
+  .water-card a.cta {
+    margin-top: auto;
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink);
+    border-radius: 999px;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+  .water-card a.cta:hover { background: var(--ink); color: var(--paper); }
+
+  .closure-note {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: rgba(138,74,44,0.08);
+    border-left: 2px solid var(--rust);
+    font-size: 0.93rem; color: var(--ink);
+  }
+  .closure-note strong { display: block; font-family: "Inter", sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--rust); margin-bottom: 0.35rem; font-weight: 600; }
+
+  /* ---------- SEASON ---------- */
+  section.deep { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+
+  .seasons {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    margin-top: 1rem;
+  }
+  @media (max-width: 680px) { .seasons { grid-template-columns: repeat(2, 1fr); } .seasons > div:nth-child(2) { border-right: none; } }
+  .seasons > div { padding: 1rem 1rem 1rem 0; border-right: 1px solid var(--rule); }
+  .seasons > div:last-child { border-right: none; }
+  .seasons .sn { font-family: "Fraunces", serif; font-style: italic; font-size: 1rem; color: var(--ink); margin-bottom: 0.3rem; }
+  .seasons .sd { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.5; }
+
+  /* ---------- REVIEWS ---------- */
+  section.reviews { padding: 4rem 0; border-top: 1px solid var(--rule); background: var(--paper-deep); }
+  .reviews-head {
+    display: flex; justify-content: space-between; align-items: end; flex-wrap: wrap; gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  .review-summary {
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .review-summary .big {
+    font-family: "Fraunces", serif; font-size: 3.5rem; font-weight: 400;
+    color: var(--ink); letter-spacing: -0.025em; line-height: 0.95;
+  }
+  .review-summary .meta {
+    display: flex; flex-direction: column; gap: 0.2rem;
+  }
+  .review-summary .stars-big { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
+  .review-summary .count { font-size: 0.88rem; color: var(--ink-mute); }
+  .leave-review {
+    display: inline-block;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--ink);
+    font-family: "Inter", sans-serif;
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 600; color: var(--ink);
+    border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .leave-review:hover { background: var(--ink); color: var(--paper); }
+  .review-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+  }
+  @media (max-width: 760px) { .review-grid { grid-template-columns: 1fr; } }
+  .review-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 1.5rem;
+  }
+  .review-card .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.65rem; }
+  .review-card .stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 0.08em; }
+  .review-card .when { font-size: 0.78rem; color: var(--ink-mute); font-weight: 500; }
+  .review-card p { font-size: 0.97rem; color: var(--ink-soft); margin: 0 0 0.85rem; line-height: 1.6; }
+  .review-card .who { font-family: "Fraunces", serif; font-style: italic; font-size: 0.95rem; color: var(--ink); }
+  .review-card .src { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-left: 0.5rem; }
+
+  /* ---------- HONEST NOTE ---------- */
+  section.honest { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  section.honest p { font-size: 1.02rem; color: var(--ink-soft); }
+  section.honest em { color: var(--ink); }
+
+  /* ---------- FOOTER ---------- */
+  footer.foot { padding: 2.5rem 0 2rem; border-top: 1px solid var(--rule); background: var(--paper-deep); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; margin-bottom: 1.75rem; }
+  @media (max-width: 680px) { .foot-grid { grid-template-columns: 1fr; } }
+  .foot-grid h4 { font-family: "Inter", sans-serif; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; margin-bottom: 0.7rem; }
+  .foot-grid p { font-size: 0.88rem; color: var(--ink-soft); margin: 0; }
+  .foot-grid ul { list-style: none; padding: 0; margin: 0; }
+  .foot-grid ul li { margin-bottom: 0.4rem; font-size: 0.88rem; }
+  .foot-grid ul li a { color: var(--ink-soft); }
+  .foot-grid ul li a:hover { color: var(--ink); }
+  .foot-bottom { border-top: 1px solid var(--rule); padding-top: 1.25rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; font-size: 0.76rem; color: var(--ink-mute); }
+  .foot-bottom em { font-family: "Fraunces", serif; }
+
+  /* ---------- LINE ART (flowing/cursive) ---------- */
+  .line {
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .line.thin { stroke-width: 1.1; }
+</style>
+</head>
+<body>
+
+
+<!-- ===================== NAV ===================== -->
+<nav class="top">
+  <div class="inner">
+    <a href="#" class="mark" style="color:var(--ink);">
+      Sea to Sky Trails
+      <small>An entry in Volume I</small>
+    </a>
+    <div class="links">
+      <a href="#overview">Overview</a>
+      <a href="#expect">What to expect</a>
+      <a href="#water">Rentals</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== BREADCRUMB + TITLE ===================== -->
+<div class="wrap">
+
+  <div class="breadcrumb">
+    <a href="https://seatoskytrails.com/">Trails</a>
+    <span class="sep">/</span>
+    <span class="here">Porteau Cove</span>
+  </div>
+
+  <div class="title-block">
+    <h1>Porteau Cove</h1>
+    <div class="meta-row">
+      <span class="stars">
+        <span class="star">&#9733;</span>
+        <span class="num">4.8</span>
+        <a href="#reviews" class="count">(38 reviews)</a>
+      </span>
+      <span class="dot"></span>
+      <span class="difficulty">Easy on a calm day</span>
+      <span class="dot"></span>
+      <a href="#" class="park underline-link">Porteau Cove Provincial Park</a>
+      <span class="dot"></span>
+      <span style="color:var(--ink-soft);">Howe Sound, BC</span>
+    </div>
+
+    <div class="tabs">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#expect">What to expect</a>
+      <a href="#water">Rentals</a>
+      <a href="#season">When to go</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+  </div>
+
+  <!-- ===================== HERO LAYOUT ===================== -->
+  <div class="hero-layout">
+
+    <!-- LEFT: photo only, no overlays -->
+    <div class="hero-photo" style="background-image:url('https://images.unsplash.com/photo-1663645038231-55fef6adb6e1?auto=format&fit=crop&w=1600&q=80');" role="img" aria-label="Porteau Cove — Howe Sound saltwater inlet with the Coast Mountains rising behind"></div>
+
+    <!-- RIGHT: trail details panel -->
+    <div class="hero-details">
+      <div class="details-card">
+        <h3>Trail Details</h3>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 4 16 C 4 8, 14 8, 14 16 C 14 20, 20 20, 20 14"/>
+              <path d="M 4 18 L 8 14 L 12 18"/>
+            </svg>
+          </div>
+          <div class="k">Length</div>
+          <div class="v">2 km</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 3 18 L 9 10 L 13 14 L 21 4"/>
+              <path d="M 21 4 L 21 9 M 21 4 L 16 4"/>
+            </svg>
+          </div>
+          <div class="k">Elevation gain</div>
+          <div class="v">0 m</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M 12 7 L 12 12 L 15 14"/>
+            </svg>
+          </div>
+          <div class="k">Estimated time</div>
+          <div class="v">1&ndash;3 hr</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 6 12 C 6 7, 11 4, 14 6 C 18 7, 20 12, 17 15 C 14 18, 9 17, 7 14 Z"/>
+              <path d="M 17 15 L 20 18"/>
+              <path d="M 18 17 L 19 19" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="k">Trail type</div>
+          <div class="v small">Day-use launch</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="4" fill="#2b3a2b" stroke="none"/>
+            </svg>
+          </div>
+          <div class="k">Difficulty</div>
+          <div class="v small">Easy on a calm day</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 12 22 C 7 17, 4 13, 4 9 C 4 5, 7 3, 12 3 C 17 3, 20 5, 20 9 C 20 13, 17 17, 12 22 Z"/>
+              <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+          </div>
+          <div class="k">Park</div>
+          <div class="v small">Porteau Cove Prov.</div>
+        </div>
+
+        <div class="row">
+          <div class="ic">
+            <svg viewBox="0 0 24 24" class="line" aria-hidden="true">
+              <path d="M 5 16 C 5 12, 7 10, 11 10 L 13 7 C 14 6, 18 6, 19 7 L 19 10 C 21 11, 22 13, 22 16 L 22 18 L 5 18 Z" />
+              <circle cx="9" cy="18" r="1.5"/>
+              <circle cx="18" cy="18" r="1.5"/>
+            </svg>
+          </div>
+          <div class="k">Dogs</div>
+          <div class="v small">On leash</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ===================== OVERVIEW ===================== -->
+<section class="overview" id="overview">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <span class="section-eyebrow">Quick Take</span>
+        <p class="lead">Porteau Cove is the closest serious saltwater paddling launch to Vancouver &mdash; a small marine park tucked into Howe Sound with a pebble beach, a drive-up boat ramp, and sunken ships sitting on the bottom a stone&rsquo;s throw from shore. Forty minutes from the city, and you&rsquo;re paddling open ocean under the Coast Mountains.</p>
+        <p>Pull off Highway 99 about 38 km north of Vancouver, drop down the short access road, and the inlet opens in front of you. Most weekends you&rsquo;ll see scuba flags bobbing over the artificial reefs &mdash; the HMCS Whitethroat and a handful of other intentionally-sunk vessels that have turned this shoreline into one of BC&rsquo;s best shore-dive sites. Above the surface, the move is a quiet morning paddle out toward Anvil Island before the outflow winds pick up.</p>
+      </div>
+
+      <aside class="sidecard">
+        <h4>At a glance</h4>
+        <ul>
+          <li><span class="k">Region</span><span class="v">Howe Sound</span></li>
+          <li><span class="k">Park</span><span class="v">Porteau Cove Prov.</span></li>
+          <li><span class="k">Access</span><span class="v">Paved drive-up</span></li>
+          <li><span class="k">Distance</span><span class="v">38 km N of Vancouver</span></li>
+          <li><span class="k">Best for</span><span class="v">Day paddles, diving, family camping</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHAT TO EXPECT ===================== -->
+<section class="expect" id="expect">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">What to Expect</span>
+      <h2>Six things people remember.</h2>
+    </div>
+
+    <div class="expect-grid">
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 3 18 C 8 13, 12 23, 16 18 S 24 13, 29 18"/>
+            <path d="M 3 23 C 8 18, 12 28, 16 23 S 24 18, 29 23" opacity="0.55"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Saltwater paddling</h3>
+          <p>Open Howe Sound. Cold even in August &mdash; glacier-fed all year.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 3 21 C 3 17, 5 15, 9 15 L 12 10 C 14 8, 20 8, 22 10 L 25 15 C 28 15, 29 17, 29 21 L 29 25 L 3 25 Z"/>
+            <circle cx="9" cy="25" r="2"/>
+            <circle cx="23" cy="25" r="2"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Drive-up paved access</h3>
+          <p>Off Highway 99. Pavement to the launch, no rough road.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 3 20 C 11 28, 21 28, 29 20"/>
+            <path d="M 3 16 C 11 24, 21 24, 29 16" opacity="0.55"/>
+            <path d="M 16 4 L 16 10"/>
+            <path d="M 13 7 L 16 4 L 19 7"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Tide-dependent launch</h3>
+          <p>High tide is friendly. Low tide is a long pebble walk.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 3 12 C 8 8, 14 14, 20 11 S 28 8, 30 12"/>
+            <path d="M 3 18 C 8 14, 14 20, 20 17 S 28 14, 30 18" opacity="0.65"/>
+            <path d="M 3 24 C 8 20, 14 26, 20 23 S 28 20, 30 24" opacity="0.4"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Howe Sound outflow winds</h3>
+          <p>Mornings are calmest. Afternoons can build fast.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 4 14 C 10 9, 22 9, 28 14"/>
+            <path d="M 4 14 L 28 14 L 25 21 L 7 21 Z"/>
+            <path d="M 16 9 L 16 21"/>
+            <path d="M 12 25 C 14 27, 18 27, 20 25" opacity="0.6"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Shipwrecks below</h3>
+          <p>Artificial reefs from sunken ships. Famous BC shore dive.</p>
+        </div>
+      </div>
+
+      <div class="expect-row">
+        <div class="icon">
+          <svg viewBox="0 0 32 32" class="line" aria-hidden="true">
+            <path d="M 6 25 C 11 12, 16 7, 16 7 C 16 7, 21 12, 26 25"/>
+            <path d="M 6 25 L 26 25"/>
+            <path d="M 16 12 L 16 25" opacity="0.55"/>
+          </svg>
+        </div>
+        <div>
+          <h3>Camping &mdash; 60 sites</h3>
+          <p>16 walk-in + 44 vehicle. Reserve via Discover Camping.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RENTALS ===================== -->
+<section class="water" id="water">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-eyebrow">Get a Boat on the Water</span>
+      <h2>Three ways to paddle Porteau.</h2>
+    </div>
+
+    <div class="water-cards">
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <path d="M 3 23 C 13 32, 27 32, 37 23"/>
+            <path d="M 3 23 C 13 27, 27 27, 37 23"/>
+            <path d="M 20 25 L 20 32"/>
+            <path d="M 12 7 C 16 13, 20 21, 24 27"/>
+            <path d="M 10 5 C 9 3, 14 1, 14 5"/>
+          </svg>
+        </div>
+        <h3>Canoe Delivery</h3>
+        <p>Delivered to the day-use launch. Best for calm-morning Howe Sound exploration around the shore. Up to three paddlers per canoe.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a canoe</a>
+      </div>
+
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <path d="M 6 32 C 15 36, 25 36, 34 32 C 25 30, 15 30, 6 32 Z"/>
+            <circle cx="20" cy="10" r="2.5"/>
+            <path d="M 20 13 L 20 28"/>
+            <path d="M 20 17 L 26 14"/>
+            <path d="M 28 4 L 28 29"/>
+            <path d="M 26 4 L 30 4"/>
+          </svg>
+        </div>
+        <h3>Paddleboard Delivery</h3>
+        <p>Stand-up boards for the glass-flat saltwater mornings. Best on a high tide and a calm wind window.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a board</a>
+      </div>
+
+      <div class="water-card">
+        <div class="ic">
+          <svg viewBox="0 0 40 40" class="line" aria-hidden="true">
+            <circle cx="20" cy="20" r="14"/>
+            <path d="M 14 26 C 17 22, 19 18, 22 14 C 23 17, 22 19, 20 22 C 18 24, 16 25, 14 26 Z"/>
+            <circle cx="20" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+            <path d="M 20 4 L 20 7" opacity="0.55"/>
+            <path d="M 36 20 L 33 20" opacity="0.55"/>
+            <path d="M 20 36 L 20 33" opacity="0.55"/>
+            <path d="M 4 20 L 7 20" opacity="0.55"/>
+          </svg>
+        </div>
+        <h3>Hire a Guide</h3>
+        <p>Local guide for the launch logistics, the tide window, and the safe routes around the shipwrecks and shoreline. Best for first-time saltwater paddlers.</p>
+        <a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener" class="cta">Book a guide</a>
+      </div>
+    </div>
+
+    <div class="closure-note">
+      <strong>Field Note &middot; check the tide chart first</strong>
+      The launch at Porteau works on a high tide. On a deep low, the pebble beach stretches out and you&rsquo;re hauling boats over wet stones to reach water. Pull the Point Atkinson tide table the night before &mdash; aim for a launch within two hours of high. Same rule for the come-back.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHEN ===================== -->
+<section class="deep" id="season">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">When to Go</span>
+      <h2>Read the tide, read the wind.</h2>
+    </div>
+
+    <div class="seasons">
+      <div>
+        <div class="sn">Apr &ndash; May</div>
+        <div class="sd">Quiet. Cold water. Wetsuit for divers; layers for paddlers.</div>
+      </div>
+      <div>
+        <div class="sn">Jun &ndash; Jul</div>
+        <div class="sd">Long evenings, late sunsets over Anvil Island. Book a campsite ahead.</div>
+      </div>
+      <div>
+        <div class="sn">Aug &ndash; early Sep</div>
+        <div class="sd">Warmest air, calmest mornings. Outflow wind builds by afternoon.</div>
+      </div>
+      <div>
+        <div class="sn">Sep &ndash; Oct</div>
+        <div class="sd">The locals&rsquo; season. Crisp light, glassy water, almost empty.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REVIEWS ===================== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+
+    <div class="reviews-head">
+      <div class="review-summary">
+        <div class="big">4.8</div>
+        <div class="meta">
+          <div class="stars-big">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="count">Based on 38 reader reviews</div>
+        </div>
+      </div>
+      <a href="mailto:hello@seatoskytrails.com?subject=Porteau%20Cove%20review" class="leave-review">Leave a review</a>
+    </div>
+
+    <div class="review-grid">
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Aug 2025</span>
+        </div>
+        <p>&ldquo;Booked the canoe delivery for a Sunday morning. Boat was waiting at the launch right when we got there. Paddled out on a high tide, glassy water all the way to Anvil Island and back before the wind came up. Forty minutes from East Van and we felt completely out of the city.&rdquo;</p>
+        <div>
+          <span class="who">Priya N.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Jul 2025</span>
+        </div>
+        <p>&ldquo;Took the paddleboards out at sunrise. Saltwater was colder than I expected even in July &mdash; PFD stayed on the whole time. The Whitethroat is visible from the surface on a calm day, which was the moment of the trip.&rdquo;</p>
+        <div>
+          <span class="who">Marco V.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Jun 2025</span>
+        </div>
+        <p>&ldquo;First time paddling salt water and the guide made it. He read the tide chart for us, picked the wind window, kept us off the dive flags. Best decision was hiring him &mdash; saved us from a sketchy afternoon.&rdquo;</p>
+        <div>
+          <span class="who">Hannah O.</span>
+          <span class="src">Reader letter</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;<span style="color:var(--ink-mute);">&#9733;</span></span>
+          <span class="when">Aug 2025</span>
+        </div>
+        <p>&ldquo;Beautiful park and a great launch spot, but heads up &mdash; the day-use lot fills early on summer weekends with divers loading gear. Got there at 7:30am and barely got a spot. Mid-week is the move if you can swing it.&rdquo;</p>
+        <div>
+          <span class="who">Devon I.</span>
+          <span class="src">Reader letter</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">Sep 2025</span>
+        </div>
+        <p>&ldquo;Camped two nights at one of the walk-in sites. Watched the sunset behind Anvil Island both evenings. Trains pass close, but honestly the rhythm grew on us. Came back with kids the next month for a day paddle.&rdquo;</p>
+        <div>
+          <span class="who">Rashida &amp; Owen</span>
+          <span class="src">Reader letter</span>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="top">
+          <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="when">May 2025</span>
+        </div>
+        <p>&ldquo;Pre-season shore dive on the Whitethroat. Easy parking, easy entry off the pebble beach, the reef is right there. Came up, dried off, and was eating in Squamish in under an hour. Hard to beat as a Vancouver day trip.&rdquo;</p>
+        <div>
+          <span class="who">Luca P.</span>
+          <span class="src">Google review</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HONEST NOTE ===================== -->
+<section class="honest">
+  <div class="wrap-narrow">
+    <div class="section-head">
+      <span class="section-eyebrow">Honest Note</span>
+      <h2>What the brochures leave out.</h2>
+    </div>
+    <p>Porteau is small. <em>The lot fills.</em> On a summer Saturday divers are unloading tanks by 8 a.m., and by 10 the day-use parking is at capacity. Weekday morning or shoulder season is the move if you want space on the beach.</p>
+    <p>The water is cold &mdash; properly cold, glacier-fed Howe Sound cold, year round. PFDs are not optional. The outflow wind out of the upper Sound can build from glassy-calm to whitecaps in under an hour on a warm afternoon. Paddle in the morning, watch the forecast, and come back early.</p>
+    <p>The cove sits on Sḵwx̱wú7mesh (Squamish) Nation territory. Pack out what you bring. The dive sites are protected &mdash; look but don&rsquo;t touch.</p>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>The Guide</h4>
+        <p>Porteau Cove is an entry in <a href="https://seatoskytrails.com/" class="underline-link">Sea to Sky Trails</a> &mdash; a slow-built field guide to the lakes, inlets, and outposts of the Coast Mountains.</p>
+      </div>
+      <div>
+        <h4>More Field Guides</h4>
+        <ul>
+          <li><a href="https://alicelakesquamish.com/">Alice Lake</a></li>
+          <li><a href="https://lakelovelywater.com/">Lake Lovely Water</a></li>
+          <li><a href="https://echolakesquamish.com/">Echo Falls &amp; Echo Lake</a></li>
+          <li><a href="https://levettelake.com/">Levette Lake</a></li>
+          <li><a href="https://callahanlake.com/">Callaghan Lake</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get a Boat</h4>
+        <ul>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Canoe delivery</a></li>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Paddleboard delivery</a></li>
+          <li><a href="https://rentedlocal.com/Profile?userId=698a2b3bca1e37a683b7bfeb" target="_blank" rel="noopener">Hire a guide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div><em><a href="https://seatoskytrails.com/" class="underline-link">Sea to Sky Trails</a></em> &middot; Vol. I &middot; Published in Sḵwx̱wú7mesh territory.</div>
+      <div>Set in Fraunces &amp; Inter. Reader-funded.</div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
